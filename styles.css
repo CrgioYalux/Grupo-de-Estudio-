@@ -40,14 +40,46 @@ body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 
-    color: var(--brand-color-l-base);
 
     background-color: var(--primary-color-l-high);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     font-size: 4em;
     font-weight: 700;
 
+    color: var(--brand-color-l-highest);
     text-shadow: -4px 4px 1px red, 4px -4px 1px blue;
+
+}
+
+h1.first {
+    animation: SwapColorsAnim 2s forwards infinite;
+}
+
+h1.second {
+    animation: SwapColorsAnim 2s 1s forwards infinite;
+}
+
+/*  Esto es horrendo */
+
+@keyframes SwapColorsAnim {
+    0% {
+        opacity: 1;
+        text-shadow: -4px 4px 1px red, 4px -4px 1px blue;
+    }
+    50% {
+        opacity: 0;
+        text-shadow: 4px -4px 1px red, -4px 4px 1px blue;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: -4px 4px 1px red, 4px -4px 1px blue;
+    }
+
 }
